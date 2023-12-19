@@ -2,7 +2,7 @@
 #include<omp.h>
 #include<stdlib.h>
 
-int ops = 0;
+
 
 void vector_addn(int n,int *res,int * a,int *b)
 {
@@ -10,8 +10,7 @@ void vector_addn(int n,int *res,int * a,int *b)
 	for(int i=0;i<n;i++)
 	{
 		res[i] = a[i]+b[i];
-		#pragma omp critical
-		{ops+=1;}
+		
 	}
 }
 
@@ -31,5 +30,5 @@ void main(){
 	for (int i = 0; i < n; i++)
 		printf("%d + %d = %d\n",a[i],b[i],c[i]);
 	
-	printf("%d\n",ops);
+	
 }
