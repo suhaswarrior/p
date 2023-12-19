@@ -22,7 +22,7 @@ void combine(int a[],int l,int m,int h){
 
 void mergesortParallel(int a[],int l,int h){
     if(l<h){
-        int mid = (l+h)>>1;
+        int mid = (l+h)/2;
         #pragma omp parallel sections
         {
             #pragma omp section
