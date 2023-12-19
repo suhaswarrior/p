@@ -4,8 +4,14 @@
 
 void combine(int a[],int l,int m,int h){
     int temp[h],i=l,j=m+1,k=l;
-	while(i<=m&&j<=h)
-		temp[k++]=a[i]<=a[j]?a[i++]:a[j++];	
+	while (i <= m && j <= h) {
+    		if (a[i] <= a[j]) {
+        		temp[k++] = a[i++];
+   		 } else {
+       		 temp[k++] = a[j++];
+   		 }
+	}
+	
 	while(i<=m)
 		temp[k++]=a[i++];
 	while(j<=h)
